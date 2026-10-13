@@ -1,1 +1,14 @@
-<p>cv-experience works!</p>
+<section class="card shadow-sm">
+  <div class="card-body">
+    <h2 class="h5 mb-3"><i class="bi bi-briefcase me-2"></i>Experiencia y proyectos</h2>
+    @for (item of experience; track item.title) {
+      <div class="mb-3">
+        <h3 class="h6 mb-0">{{ item.title }}</h3>
+        <small class="text-secondary">{{ item.place }} · {{ item.period }}</small>
+        <p class="mb-0">{{ item.description }}</p>
+      </div>
+    } @empty {
+      <p class="text-secondary mb-0">Sin experiencia registrada.</p>
+    }
+  </div>
+</section>

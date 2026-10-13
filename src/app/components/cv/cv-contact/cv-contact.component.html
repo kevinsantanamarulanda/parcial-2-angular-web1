@@ -1,1 +1,14 @@
-<p>cv-contact works!</p>
+<section class="card shadow-sm">
+  <div class="card-body">
+    <h2 class="h5 mb-3"><i class="bi bi-person-lines-fill me-2"></i>Contacto</h2>
+    <ul class="list-unstyled mb-0">
+      <li class="mb-2"><i class="bi bi-envelope me-2"></i>{{ contact.email }}</li>
+      <li class="mb-2"><i class="bi bi-telephone me-2"></i>{{ contact.phone }}</li>
+      <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>{{ contact.city }}</li>
+      <li>
+        <i class="bi bi-github me-2"></i>
+        <a [href]="contact.github" target="_blank" rel="noopener">GitHub</a>
+      </li>
+    </ul>
+  </div>
+</section>
