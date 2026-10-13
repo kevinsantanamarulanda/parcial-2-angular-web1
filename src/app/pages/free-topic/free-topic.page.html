@@ -1,1 +1,28 @@
-<p>free-topic works!</p>
+<h1 class="h3 mb-4">Mi tema favorito</h1>
+
+<div class="row g-4">
+  @for (item of items; track item.id) {
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="card h-100 shadow-sm">
+        <img [src]="item.image" class="card-img-top" [alt]="item.name" />
+        <div class="card-body">
+          <small class="text-secondary">{{ item.category }} · {{ item.year }}</small>
+          <h2 class="h5">{{ item.name }}</h2>
+          <p>{{ item.description }}</p>
+          @for (tag of item.tags; track tag) {
+            <span class="badge text-bg-dark me-1">{{ tag }}</span>
+          }
+        </div>
+        <div class="card-footer">
+          @for (star of stars; track star) {
+            <i class="bi"
+               [class.bi-star-fill]="star <= item.rating"
+               [class.bi-star]="star > item.rating"></i>
+          }
+        </div>
+      </article>
+    </div>
+  } @empty {
+    <p class="text-secondary">No hay elementos para mostrar.</p>
+  }
+</div>
