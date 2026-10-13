@@ -1,1 +1,9 @@
-<p>cv-profile works!</p>
+<section class="card shadow-sm text-center">
+  <div class="card-body">
+    <img [src]="profile.photo" [alt]="profile.fullName"
+         class="rounded-circle mb-3 profile-photo" />
+    <h1 class="h4">{{ profile.fullName }}</h1>
+    <p class="text-primary fw-semibold">{{ profile.title }}</p>
+    <p class="text-secondary mb-0">{{ profile.summary }}</p>
+  </div>
+</section>

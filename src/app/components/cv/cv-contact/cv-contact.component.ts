@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CvContact } from '../../../interfaces/cv.interface';
 
 @Component({
   selector: 'app-cv-contact',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './cv-contact.component.css',
 })
 export class CvContactComponent {
-
+  @Input() contact!: CvContact;
 }

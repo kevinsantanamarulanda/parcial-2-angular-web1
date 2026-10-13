@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CvSkill } from '../../../interfaces/cv.interface';
 
 @Component({
   selector: 'app-cv-skills',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './cv-skills.component.css',
 })
 export class CvSkillsComponent {
-
+  @Input() skills: CvSkill[] = [];
 }

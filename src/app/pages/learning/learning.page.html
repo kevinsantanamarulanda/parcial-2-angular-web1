@@ -1,1 +1,53 @@
-<p>learning works!</p>
+<h1 class="h3 mb-1">Aprendizaje del curso</h1>
+<p class="text-secondary mb-4">
+  Temas, tecnologías y proyectos desarrollados en Programación en Ambiente Web I.
+</p>
+
+<div class="row g-4">
+  @for (topic of topics; track topic.id) {
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="card h-100 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <i class="bi bi-{{ topic.icon }} fs-2"></i>
+            <span class="badge text-bg-secondary">{{ topic.cut }}</span>
+          </div>
+
+          <h2 class="h5">{{ topic.title }}</h2>
+          <p class="text-secondary">{{ topic.description }}</p>
+
+          <h3 class="h6">Tecnologías</h3>
+          <div class="mb-3">
+            @for (tech of topic.technologies; track tech) {
+              <span class="badge text-bg-primary me-1">{{ tech }}</span>
+            }
+          </div>
+
+          <h3 class="h6">Conocimientos</h3>
+          <ul>
+            @for (skill of topic.skills; track skill) {
+              <li>{{ skill }}</li>
+            }
+          </ul>
+
+          <h3 class="h6">Proyectos</h3>
+          <ul class="mb-0">
+            @for (project of topic.projects; track project) {
+              <li>{{ project }}</li>
+            } @empty {
+              <li class="text-secondary">Sin proyectos aún</li>
+            }
+          </ul>
+        </div>
+
+        <div class="card-footer">
+          @if (topic.status === 'Completado') {
+            <span class="badge text-bg-success">{{ topic.status }}</span>
+          } @else {
+            <span class="badge text-bg-warning">{{ topic.status }}</span>
+          }
+        </div>
+      </article>
+    </div>
+  }
+</div>
